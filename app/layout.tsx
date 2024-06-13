@@ -2,7 +2,16 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 
-const rubik = Rubik({ subsets: ["latin"] });
+// Components
+import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
+import StairTransition from "@/components/StairTransition";
+
+const rubik = Rubik({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: "Amine Elkhalidy - Portfolio",
@@ -17,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <body className={rubik.variable}>
+        <Header />
+        <StairTransition />
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }

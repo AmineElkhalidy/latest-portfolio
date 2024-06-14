@@ -150,3 +150,39 @@ export const education = {
     },
   ],
 };
+
+export const projects = [
+  {
+    num: "01",
+    category: "frontend",
+    title: "Project 1",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsam, sit illum maiores voluptatibus quos libero molestiae.",
+    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
+    image: "/assets/work/thumb1.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "fullstack",
+    title: "Project 2",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsam, sit illum maiores voluptatibus quos libero molestiae.",
+    stack: [{ name: "Next.js" }, { name: "TailwindCSS" }, { name: "Node.js" }],
+    image: "/assets/work/thumb2.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "03",
+    category: "frontend",
+    title: "Project 3",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsam, sit illum maiores voluptatibus quos libero molestiae.",
+    stack: [{ name: "Next.js" }, { name: "TailwindCSS" }],
+    image: "/assets/work/thumb3.png",
+    live: "",
+    github: "",
+  },
+];

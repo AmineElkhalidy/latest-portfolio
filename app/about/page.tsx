@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus labore corporis voluptas ab odit nesciunt officia sed!",
+    "I excel in front-end development with expertise in HTML, CSS, and JavaScript. I am proficient in frameworks like React and Next and have a solid grasp of responsive design principles. Additionally, I am experienced with version control systems and tools like Git, ensuring smooth and efficient project workflows.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -75,7 +75,9 @@ const About = () => {
           <div className="min-h-[70vh] w-full">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left ">
-                <h3 className="text-3xl font-bold">{experience?.title}</h3>
+                <h3 className="text-3xl font-semibold font-secondary">
+                  {experience?.title}
+                </h3>
                 <p className="max-w-[600px] text-muted-foreground mx-auto xl:mx-0">
                   {experience?.description}
                 </p>
@@ -103,7 +105,9 @@ const About = () => {
 
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left ">
-                <h3 className="text-3xl font-bold">{education?.title}</h3>
+                <h3 className="text-3xl font-semibold font-secondary">
+                  {education?.title}
+                </h3>
                 <p className="max-w-[600px] text-muted-foreground mx-auto xl:mx-0">
                   {education?.description}
                 </p>
@@ -131,7 +135,9 @@ const About = () => {
 
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-3xl font-bold">{skills?.title}</h3>
+                <h3 className="text-3xl font-semibold font-secondary">
+                  {skills?.title}
+                </h3>
                 <p className="max-w-[600px] text-muted-foreground mx-auto xl:mx-0">
                   {skills?.description}
                 </p>
@@ -162,8 +168,10 @@ const About = () => {
               value="about"
               className="w-full text-center xl:text-left"
             >
-              <div className="flex flex-col gap-[30px] ">
-                <h3 className="text-3xl font-semibold">{about.title}</h3>
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-3xl font-semibold font-secondary">
+                  {about.title}
+                </h3>
                 <p className="max-w-[600px] text-muted-foreground mx-auto xl:mx-0">
                   {about.description}
                 </p>
@@ -177,7 +185,7 @@ const About = () => {
                       <span className="text-muted-foreground">
                         {item.fieldName}
                       </span>
-                      <span className="text-lg">{item.fieldValue}</span>
+                      <span className="font-medium">{item.fieldValue}</span>
                     </li>
                   ))}
                 </ul>

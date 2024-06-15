@@ -1,7 +1,5 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
 import { services } from "@/constants";
 import { motion } from "framer-motion";
 
@@ -26,19 +24,13 @@ const Services = () => {
                 <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                   {service.num}
                 </div>
-                {/* <Link
-                  href={service.href}
-                  className="w-[70px] h-[70px] rounded-full border flex items-center justify-center group-hover:bg-sky-700 hover:-rotate-45"
-                >
-                  <BsArrowDownRight className="text-3xl group-hover:text-white" />
-                </Link> */}
               </div>
 
               <h2 className="text-[42px] font-bold leading-none group-hover:text-sky-700 transition-all duration-500">
                 {service.title}
               </h2>
               <p className="text-muted-foreground">{service.description}</p>
-              <div className="border-b border-gray-300 w-full"></div>
+              <div className="border-b border-gray-300 w-full" />
             </div>
           ))}
         </motion.div>

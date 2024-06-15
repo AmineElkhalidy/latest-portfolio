@@ -4,11 +4,11 @@ import Link from "next/link";
 const socials = [
   {
     icon: <FaGithub />,
-    path: "https://example.com",
+    path: "https://github.com/AmineElkhalidy",
   },
   {
     icon: <FaLinkedin />,
-    path: "https://example.com",
+    path: "https://www.linkedin.com/in/elkhalidyamine/",
   },
 ];
 
@@ -22,7 +22,12 @@ const Socials = ({
   return (
     <div className={containerStyle}>
       {socials.map((social, index) => (
-        <Link key={index} href={social.path} className={iconStyle}>
+        <Link
+          key={index}
+          href={social.path}
+          className={iconStyle}
+          target="_blank"
+        >
           {social.icon}
         </Link>
       ))}

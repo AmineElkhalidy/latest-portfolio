@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -17,14 +17,14 @@ import { projects } from "@/constants";
 import WorkSlideButtons from "@/components/WorkSlideButtons";
 
 const Work = () => {
-  const [projectsList, setProjectsList] = useState(projects[0]);
+  const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper: any) => {
     // Get current slide index
     const currentIndex = swiper.activeIndex;
 
     // Update project state based on the active index
-    setProjectsList(projects[currentIndex]);
+    setProject(projects[currentIndex]);
   };
 
   return (
@@ -47,20 +47,18 @@ const Work = () => {
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* Outline number */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {projectsList.num}
+                {project.num}
               </div>
               {/* Project category */}
               <h2 className="text-[42px] font-semibold leading-none group-hover:text-sky-700 transition-all duration-500 capitalize">
-                {projectsList.category} project
+                {project.category} project
               </h2>
-              <p className="text-muted-foreground">
-                {projectsList.description}
-              </p>
+              <p className="text-muted-foreground">{project.description}</p>
               <ul className="flex gap-4">
-                {projectsList.stack.map((item, index) => (
+                {project.stack.map((item, index) => (
                   <li key={index} className="text-lg text-sky-700">
                     {item.name}
-                    {index !== projectsList.stack.length - 1 && ","}
+                    {index !== project.stack.length - 1 && ","}
                   </li>
                 ))}
               </ul>
@@ -69,7 +67,7 @@ const Work = () => {
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                <Link href={projectsList.live}>
+                <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-gray-100 flex justify-center items-center group">
@@ -82,7 +80,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
 
-                <Link href={projectsList.github}>
+                <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-gray-100 flex justify-center items-center group">
@@ -108,14 +106,14 @@ const Work = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-gray-200">
+                  <div className="h-[460px] relative group flex justify-center items-center">
                     {/* Overlay */}
                     <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
                     {/* Image */}
                     <div className="relative w-full h-full">
                       <Image
-                        src={projectsList.image}
+                        src={project.image}
                         fill
                         className="object-cover"
                         alt="Project"

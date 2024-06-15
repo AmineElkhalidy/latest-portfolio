@@ -22,6 +22,7 @@ const config = {
     },
     fontFamily: {
       primary: "var(--font-body)",
+      secondary: ["Playwrite NL", "cursive"],
     },
     extend: {
       colors: {

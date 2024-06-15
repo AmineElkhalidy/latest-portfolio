@@ -1,7 +1,15 @@
 "use client";
 
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiTypescript,
+  SiSanity,
+  SiPrisma,
+  SiMongodb,
+  SiJest,
+} from "react-icons/si";
 import { about, education, experience } from "@/constants";
 import { Tabs, TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -45,6 +53,26 @@ const skills = {
     {
       icon: <FaNodeJs />,
       title: "Node.js",
+    },
+    {
+      icon: <SiTypescript />,
+      title: "TypeScript",
+    },
+    {
+      icon: <SiPrisma />,
+      title: "Prisma",
+    },
+    {
+      icon: <SiMongodb />,
+      title: "MongoDB",
+    },
+    {
+      icon: <SiSanity />,
+      title: "Sanity",
+    },
+    {
+      icon: <SiJest />,
+      title: "Jest",
     },
   ],
 };
@@ -141,6 +169,7 @@ const About = () => {
                 <p className="max-w-[600px] text-muted-foreground mx-auto xl:mx-0">
                   {skills?.description}
                 </p>
+
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill, index) => (

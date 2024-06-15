@@ -6,6 +6,7 @@ import Socials from "@/components/Socials";
 import Photo from "@/components/Photo";
 import State from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
           <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
             {/* Text */}
             <div className="text-center xl:text-left order-2 xl:order-none">
-              <span className="text-xl font-secondary">Software Developer</span>
+              <span className="text-lg font-secondary">
+                Full Stack Developer
+              </span>
               <h1 className="h1">
                 Hello, I&apos;m <br />{" "}
-                <span className="text-sky-700">Amine Elkhalidy</span>,
-                <br />
-                <span className="text-sky-700">Full Stack Dev</span>
+                <span className="text-sky-700">Amine Elkhalidy</span>
               </h1>
               <p className="max-w-[500px] mb-9 text-muted-foreground">
                 I excel at crafting elegant digital experiences.
@@ -28,14 +29,20 @@ export default function Home() {
 
               {/* Button & Social media accounts */}
               <div className="flex flex-col xl:flex-row items-center gap-8">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="uppercase flex items-center gap-2 rounded-full border-sky-700 transition-all hover:text-sky-700"
+                <Link
+                  href="/assets/pdf/Amine-Elkhalidy.pdf"
+                  download="Amine-Elkhalidy.pdf"
+                  rel="noopener noreferrer"
                 >
-                  <span>Download CV</span>
-                  <FiDownload className="text-xl" />
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="uppercase flex items-center gap-2 rounded-full border-sky-700 transition-all hover:text-sky-700"
+                  >
+                    <span>Download CV</span>
+                    <FiDownload className="text-xl" />
+                  </Button>
+                </Link>
 
                 <div className="mb-8 xl:mb-0">
                   <Socials

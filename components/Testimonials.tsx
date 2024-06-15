@@ -9,7 +9,7 @@ const Testimonials = () => {
       <div className="my-10 text-center">
         <h2 className="text-4xl font-bold font-secondary">Testimonials</h2>
         <p className="text-muted-foreground mt-2">
-          What my clients says about my work
+          What my clients say about my work
         </p>
       </div>
 
@@ -22,7 +22,7 @@ const Testimonials = () => {
             >
               <CardHeader>
                 <CardContent className="pt-4 px-0 italic">
-                  {item.description}
+                  "{item.description}"
                 </CardContent>
                 <CardTitle className="flex items-center gap-x-2">
                   <div>

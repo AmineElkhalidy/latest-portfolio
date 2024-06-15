@@ -173,7 +173,7 @@ const About = () => {
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill, index) => (
-                      <li key={index} className="">
+                      <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-gray-100 rounded-xl flex justify-center items-center group">

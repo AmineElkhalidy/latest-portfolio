@@ -15,6 +15,7 @@ import {
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useForm, ValidationError } from "@formspree/react";
 
 const info = [
   {
@@ -38,6 +39,12 @@ const info = [
 ];
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mqkrrwzj");
+
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -56,7 +63,10 @@ const Contact = () => {
           {/* Form */}
           {/* xl:w-[54%] */}
           <div className="w-full order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-gray-50 rounded-md border">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-gray-50 rounded-md border"
+            >
               <h3 className="text-3xl font-medium text-sky-700">
                 Let&apos;s work together
               </h3>
@@ -69,13 +79,33 @@ const Contact = () => {
               {/* Input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="text" name="firstname" placeholder="Firstname" />
+                <ValidationError
+                  prefix="First Name"
+                  field="firstname"
+                  errors={state.errors}
+                />
                 <Input type="text" name="lastname" placeholder="Lastname" />
+                <ValidationError
+                  prefix="Last Name"
+                  field="lastname"
+                  errors={state.errors}
+                />
                 <Input type="email" name="email" placeholder="Email address" />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
                 <Input type="phone" name="phone" placeholder="Phone Number" />
+                <ValidationError
+                  prefix="Phone"
+                  field="phone"
+                  errors={state.errors}
+                />
               </div>
 
               {/* Select */}
-              <Select>
+              <Select name="service">
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service"></SelectValue>
                 </SelectTrigger>
@@ -86,15 +116,32 @@ const Contact = () => {
                     <SelectItem value="est">Web Development</SelectItem>
                     <SelectItem value="cst">UI/UX Design</SelectItem>
                     <SelectItem value="mst">Logo Design</SelectItem>
+                    <SelectItem value="ost">SEO</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              <ValidationError
+                prefix="Service"
+                field="service"
+                errors={state.errors}
+              />
 
-              <Textarea className="h-[200px]" placeholder="Your message" />
+              <Textarea
+                className="h-[200px]"
+                name="message"
+                placeholder="Your message"
+              />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
 
               <Button
+                type="submit"
                 size="lg"
                 className="max-w-40 py-6 bg-sky-700 hover:bg-sky-900"
+                disabled={state.submitting}
               >
                 Send message
               </Button>

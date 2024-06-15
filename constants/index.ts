@@ -51,7 +51,7 @@ export const services = [
 export const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus labore corporis voluptas ab odit nesciunt officia sed!",
+    "I am a dedicated front-end developer with a passion for creating seamless and engaging web experiences. With a keen eye for detail and a drive for continuous improvement, I blend design and technology to build intuitive user interfaces. Beyond coding, I enjoy exploring new technologies and pushing the boundaries of web development to deliver innovative solutions.",
   info: [
     {
       fieldName: "Name",

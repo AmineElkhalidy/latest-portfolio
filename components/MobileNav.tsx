@@ -1,6 +1,6 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -20,17 +20,18 @@ const MobileNav = () => {
       <SheetContent className="flex flex-col justify-center items-center">
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
-            <Link
-              key={index}
-              href={link.path}
-              className={cn(
-                "text-lg font-medium capitalize hover:text-sky-700 transition-all",
-                link.path === pathname &&
-                  "text-sky-700 border-b-2 border-sky-700"
-              )}
-            >
-              {link.name}
-            </Link>
+            <SheetClose key={index}>
+              <Link
+                href={link.path}
+                className={cn(
+                  "text-lg font-medium capitalize hover:text-sky-700 transition-all",
+                  link.path === pathname &&
+                    "text-sky-700 border-b-2 border-sky-700"
+                )}
+              >
+                {link.name}
+              </Link>
+            </SheetClose>
           ))}
 
           <Link href="/contact">

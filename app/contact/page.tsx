@@ -16,6 +16,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useForm, ValidationError } from "@formspree/react";
+import toast from "react-hot-toast";
 
 const info = [
   {
@@ -42,7 +43,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("mqkrrwzj");
 
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    toast.success("Your message has been sent successfully!");
   }
 
   return (

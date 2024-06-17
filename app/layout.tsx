@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import ToastProvider from "@/components/ToastProvider";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={rubik.variable}>
         <Header />
+        <ToastProvider />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
       </body>

@@ -17,7 +17,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: "Amine Elkhalidy - Portfolio",
   description:
-    "Welcome to my portfolio! I’m a Full Stack Developer who specializes in creating stunning and user-friendly websites. Explore my work, where I combine design and technology to build responsive, modern web experiences.",
+    "I’m a Full Stack Web Developer specialized in creating stunning and user-friendly websites. Explore my work, where I combine design and technology to build responsive, modern web experiences.",
 };
 
 export default function RootLayout({

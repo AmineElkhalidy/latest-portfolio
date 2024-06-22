@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { FaLock } from "react-icons/fa";
 import {
   Tooltip,
   TooltipContent,
@@ -49,10 +50,16 @@ const Work = () => {
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
-              {/* Project category */}
-              <h2 className="text-[42px] font-semibold leading-none group-hover:text-sky-700 transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
+
+              <div>
+                <span className="capitalize text-sm tracking-widest text-muted-foreground">
+                  {project.category} project
+                </span>
+                {/* Project category */}
+                <h2 className="text-[42px] font-semibold leading-none group-hover:text-sky-700 transition-all duration-500">
+                  {project.title}
+                </h2>
+              </div>
               <p className="text-muted-foreground">{project.description}</p>
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => (
@@ -84,10 +91,18 @@ const Work = () => {
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-gray-100 flex justify-center items-center group">
-                        <BsGithub className="text-2xl group-hover:text-sky-700" />
+                        {project.github === "" ? (
+                          <FaLock className="text-2xl group-hover:text-sky-700" />
+                        ) : (
+                          <BsGithub className="text-2xl group-hover:text-sky-700" />
+                        )}
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Github Code</p>
+                        <p>
+                          {project.github === " "
+                            ? "Github Code"
+                            : "Code is Private"}
+                        </p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
